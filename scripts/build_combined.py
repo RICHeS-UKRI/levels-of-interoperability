@@ -113,7 +113,8 @@ def build_levels_sheet(wb, data):
         ("typicallyRequiresNotes", "Typically requires notes"),
         ("branchOrJumpNotes", "Branch or jump notes"),
         ("whatItEnables", "What it enables"),
-        ("fairContribution", "FAIR contribution"),
+        ("fairContributionLocal", "FAIR (local)"),
+        ("fairContributionExternal", "FAIR (external)"),
         ("notes", "Notes"),
     ]
     entries = sorted(data["entries"], key=lambda e: e["order"])

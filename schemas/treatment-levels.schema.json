@@ -87,13 +87,21 @@
           "type": "string",
           "description": "Capabilities or outcomes that become possible at this level."
         },
-        "fairContribution": {
+        "fairContributionLocal": {
           "type": "array",
           "items": {
             "type": "string",
             "enum": ["findable", "accessible", "interoperable", "reusable"]
           },
-          "description": "Which FAIR principles this level most directly advances."
+          "description": "FAIR principles that this level achieves locally, meaning within the team, project, or institution. Local FAIR contributions are real and valuable but operate within the boundary of the institution rather than across institutions. Documented description and schema work supports local FAIR from early levels even though external FAIR requires more."
+        },
+        "fairContributionExternal": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["findable", "accessible", "interoperable", "reusable"]
+          },
+          "description": "FAIR principles that this level achieves externally, meaning across institutional boundaries through the data itself rather than through human or infrastructural intermediaries. External FAIR is the strict reading of the published FAIR principles, where the dataset itself satisfies the principle in a machine-actionable way."
         },
         "related": {
           "type": "array",

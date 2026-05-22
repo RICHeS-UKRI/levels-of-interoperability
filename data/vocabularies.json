@@ -168,13 +168,13 @@
     },
     {
       "name": "fairPrinciple",
-      "description": "The four FAIR principles.",
-      "appliesTo": ["treatment-levels.fairContribution"],
+      "description": "The four FAIR principles. Within this framework, a level may achieve a principle locally (within the team, project, or institution) or externally (across institutional boundaries through the data itself). The framework treats both as legitimate achievements while being honest about the distinction.",
+      "appliesTo": ["treatment-levels.fairContributionLocal", "treatment-levels.fairContributionExternal"],
       "terms": [
         {
           "id": "V40",
           "value": "findable",
-          "description": "Data should be findable through clear identifiers and indexed metadata.",
+          "description": "Data should be findable through clear identifiers and indexed metadata. Local findability arrives when a documented schema and consistent records make resources retrievable within the team or institution. External findability requires publication or registration that makes the resource discoverable by those outside the institution, which typically needs persistent identifiers and aggregator participation.",
           "related": [
             {
               "type": "documentation",
@@ -186,17 +186,34 @@
         {
           "id": "V41",
           "value": "accessible",
-          "description": "Data should be retrievable through standardised protocols, with clear access conditions."
+          "description": "Data should be retrievable through standardised protocols, with clear access conditions. Local accessibility arrives when the resource is documented and stored well enough that team members can retrieve it. External accessibility requires infrastructure that exposes the resource to retrieval by external parties under documented conditions."
         },
         {
           "id": "V42",
           "value": "interoperable",
-          "description": "Data should use shared standards and vocabularies so it can be combined with other data."
+          "description": "Data should use shared standards and vocabularies so it can be combined with other data. Local interoperability begins with a documented schema that ensures equivalent fields appear in equivalent places. External interoperability requires that the schema and vocabularies are shared with other organisations, which begins at T04a and strengthens through T04b and T05."
         },
         {
           "id": "V43",
           "value": "reusable",
-          "description": "Data should be well described and carry clear re-use licences so it can be used in new contexts."
+          "description": "Data should be well described and carry clear re-use licences so it can be used in new contexts. Local reusability arrives with documented schema and clear local conventions. External reusability additionally requires explicit re-use licences and community-recognised standards, both of which typically become expected at T04b."
+        }
+      ]
+    },
+    {
+      "name": "fairScope",
+      "description": "Whether a FAIR achievement is local (within the team, project, or institution) or external (across institutional boundaries through the data itself). Introduced by this framework to recognise that significant FAIR work happens locally before external FAIR is achievable. Note that external FAIR can also be supported by infrastructures beyond the data itself, such as access frameworks or aggregators, but that supported external FAIR is outside the scope of this framework as documented here.",
+      "appliesTo": [],
+      "terms": [
+        {
+          "id": "V60",
+          "value": "local",
+          "description": "Achievement is internal to the team, project, or institution. Local FAIR contributions are real and worthwhile, and represent the practical first achievements of researchers and teams developing their data practice."
+        },
+        {
+          "id": "V61",
+          "value": "external",
+          "description": "Achievement is across institutional boundaries, delivered by the data and its metadata themselves rather than by human or infrastructural intermediaries. This is the strict reading of the published FAIR principles."
         }
       ]
     },

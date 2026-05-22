@@ -134,12 +134,46 @@ describe behaviour in practice).
 
 ## FAIR and the framework
 
-The framework operationalises FAIR rather than restating it. Findability
-emerges from documented description and persistent identifiers (T03
-upward, T06 in particular). Accessibility is the cross-cutting attribute
-of the same name. Interoperability is the trajectory through T04 to
-T07b. Reusability emerges from T08 onward when documentation, vocabulary,
-semantics, identifiers, and licensing all combine.
+The framework recognises that FAIR achievements happen first locally and
+later externally, and treats both as legitimate. **Local FAIR** is
+achievement within the team, project, or institution, delivered by the
+data and its description as they stand. **External FAIR** is achievement
+across institutional boundaries through the data itself, which is the
+strict reading of the published FAIR principles.
+
+The two are not alternatives. Local FAIR is the practical first ground
+on which external FAIR is later built, and most resources spend
+significant time being locally FAIR before becoming externally FAIR.
+
+Within the treatment levels, local FAIR contributions arrive early.
+Documented description at T02 supports local accessibility. A documented
+local schema at T03 delivers all four FAIR principles locally: the
+resource is findable in the team's indexes, retrievable through the
+schema, interoperable with other team work using the same schema, and
+reusable by other team members with the schema as documentation. T03 is
+a substantial achievement that the framework celebrates rather than
+diminishes.
+
+External FAIR contributions arrive more gradually. Interoperability
+across organisations begins at T04a where a shared schema is in use,
+strengthens at T04b with community endorsement, and deepens at T05 and
+T07b with vocabulary alignment and semantic representation. External
+reusability arrives at T04b when explicit licensing becomes expected.
+External findability arrives at T06 with persistent identifiers.
+External accessibility, in the strict sense of the data being retrievable
+by external parties through documented protocols, typically arrives at
+T06+ where rich PID-bearing datasets are deposited in appropriate
+infrastructure, and is fully realised at T08 with federation.
+
+External FAIR achieved through the data itself, as described above, is
+not the only way external FAIR-like properties are delivered in practice.
+Access frameworks, research data offices, institutional registries,
+and the wider publication ecosystem deliver findability and accessibility
+for resources at lower treatment levels through human and infrastructural
+intermediaries. These supported external FAIR contributions are real
+and important, but they sit outside the boundary of this framework as
+documented here and require richer context to describe properly. A future
+extension of the framework may treat them more fully.
 
 ## Licence
 
