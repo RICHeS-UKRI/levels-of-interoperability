@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/transitions.schema.json",
+  "title": "Transitions",
+  "description": "Movements between treatment levels, cross-cutting changes, and the work and tooling each requires.",
+  "type": "object",
+  "required": ["framework", "version", "entries"],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "const": "levels-of-interoperability"
+    },
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date"
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/transition" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "transition": {
+      "type": "object",
+      "required": ["id", "order", "kind", "description"],
+      "properties": {
+        "id": {
+          "$ref": "definitions.schema.json#/$defs/transitionId"
+        },
+        "order": {
+          "$ref": "definitions.schema.json#/$defs/orderValue"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["level-to-level", "downward", "cross-cutting"],
+          "description": "The kind of transition. level-to-level moves from one specific level to another. downward describes the bidirectional flow back to lower levels. cross-cutting describes changes that apply across all levels, such as accessibility or scope improvements."
+        },
+        "from": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/levelId" },
+          "description": "Starting level or levels. Empty or omitted for cross-cutting transitions."
+        },
+        "fromNotes": {
+          "type": "string",
+          "description": "Free text for cases where the starting condition is not adequately captured by a level identifier list."
+        },
+        "to": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/levelId" },
+          "description": "Ending level or levels. Empty or omitted for cross-cutting transitions."
+        },
+        "toNotes": {
+          "type": "string",
+          "description": "Free text for cases where the ending condition is not adequately captured by a level identifier list."
+        },
+        "description": {
+          "type": "string",
+          "description": "What this transition is."
+        },
+        "resourcesAffected": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/resourceId" },
+          "description": "Resources most affected by this transition."
+        },
+        "resourcesAffectedAllResources": {
+          "type": "boolean",
+          "description": "Set to true if all resources are affected, rather than enumerating them."
+        },
+        "resourcesAffectedNotes": {
+          "type": "string"
+        },
+        "workRequired": {
+          "type": "string",
+          "description": "What practical work this transition involves."
+        },
+        "toolsAndServicesInvolved": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/serviceId" },
+          "description": "Tools and services that support this transition."
+        },
+        "related": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/relatedResource" }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

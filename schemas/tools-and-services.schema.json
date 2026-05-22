@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/tools-and-services.schema.json",
+  "title": "Tools and Services",
+  "description": "Tools, services, infrastructure, and reference resources that support the framework, with their relationships to resources, levels, and transitions.",
+  "type": "object",
+  "required": ["framework", "version", "entries"],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "const": "levels-of-interoperability"
+    },
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date"
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/toolOrService" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "toolOrService": {
+      "type": "object",
+      "required": ["id", "order", "name", "category", "description"],
+      "properties": {
+        "id": {
+          "$ref": "definitions.schema.json#/$defs/serviceId"
+        },
+        "order": {
+          "$ref": "definitions.schema.json#/$defs/orderValue"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "definitions.schema.json#/$defs/categoryValue"
+        },
+        "description": {
+          "type": "string"
+        },
+        "handlesResources": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/resourceId" },
+          "description": "Resources this tool or service handles. Use an empty array with the allResources flag set to true to indicate it applies to all resources."
+        },
+        "handlesAllResources": {
+          "type": "boolean",
+          "description": "Set to true if this tool or service applies to all resources, rather than enumerating them."
+        },
+        "handlesResourcesNotes": {
+          "type": "string",
+          "description": "Optional notes on the resource scope, including conditions or partial coverage."
+        },
+        "supportsLevels": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/levelId" },
+          "description": "Treatment levels at which this tool or service operates."
+        },
+        "supportsLevelsNotes": {
+          "type": "string"
+        },
+        "enablesTransitions": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/transitionId" },
+          "description": "Transitions that this tool or service enables or supports."
+        },
+        "enablesTransitionsNotes": {
+          "type": "string"
+        },
+        "currentStatus": {
+          "$ref": "definitions.schema.json#/$defs/currentStatus"
+        },
+        "currentStatusNotes": {
+          "type": "string"
+        },
+        "ownersAndInitiatives": {
+          "type": "string",
+          "description": "Communities, projects, or organisations responsible for this tool or service."
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/serviceId" },
+          "description": "Other tools or services this one depends on."
+        },
+        "related": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/relatedResource" }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

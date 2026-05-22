@@ -1,0 +1,38 @@
+{
+  "title": "Levels of Interoperability for Heritage Science",
+  "description": "A framework for describing and planning the development of data practice in heritage science, from tacit personal records through to integrated digital constructs. Includes treatment levels, resource inventory, tools and services, and transitions, with cross-references and JSON Schema validation.",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "creators": [
+    {
+      "name": "Padfield, Joe",
+      "affiliation": "National Gallery, London",
+      "orcid": "0000-0002-2572-6428"
+    }
+  ],
+  "keywords": [
+    "heritage science",
+    "interoperability",
+    "FAIR data",
+    "CIDOC CRM",
+    "data management",
+    "semantic web",
+    "linked data",
+    "digital twin",
+    "heritage data"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.7101169",
+      "relation": "isContinuedBy",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.7849169",
+      "relation": "isContinuedBy",
+      "scheme": "doi"
+    }
+  ],
+  "communities": []
+}

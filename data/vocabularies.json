@@ -1,0 +1,226 @@
+{
+  "framework": "levels-of-interoperability",
+  "version": "0.1.0",
+  "lastUpdated": "2026-05-22",
+  "vocabularies": [
+    {
+      "name": "currentStatus",
+      "description": "Development status of a tool, service, or reference resource.",
+      "appliesTo": ["tools-and-services.currentStatus"],
+      "terms": [
+        {
+          "id": "V01",
+          "value": "mature",
+          "description": "Widely adopted, stable, and actively maintained."
+        },
+        {
+          "id": "V02",
+          "value": "established",
+          "description": "In production use within at least some communities, with reasonable stability."
+        },
+        {
+          "id": "V03",
+          "value": "emerging",
+          "description": "Developing, with active work and growing adoption."
+        },
+        {
+          "id": "V04",
+          "value": "prototype",
+          "description": "Working examples exist but not yet ready for general use."
+        },
+        {
+          "id": "V05",
+          "value": "conceptual",
+          "description": "Idea articulated and scoped, but no working examples yet."
+        },
+        {
+          "id": "V06",
+          "value": "not-yet-developed",
+          "description": "Identified as needed but not yet started."
+        }
+      ]
+    },
+    {
+      "name": "scopeValue",
+      "description": "Organisational or geographic scope at which something operates.",
+      "appliesTo": ["treatment-levels.scopeApplies"],
+      "terms": [
+        {
+          "id": "V10",
+          "value": "individual",
+          "description": "Operates at the level of a single person."
+        },
+        {
+          "id": "V11",
+          "value": "project",
+          "description": "Operates within the bounds of a specific project."
+        },
+        {
+          "id": "V12",
+          "value": "team",
+          "description": "Operates within a working team, potentially spanning projects."
+        },
+        {
+          "id": "V13",
+          "value": "institutional",
+          "description": "Operates at the level of a single institution."
+        },
+        {
+          "id": "V14",
+          "value": "cross-institutional",
+          "description": "Operates across multiple institutions."
+        },
+        {
+          "id": "V15",
+          "value": "sectoral",
+          "description": "Operates across a sector or domain (e.g. museums, heritage science)."
+        },
+        {
+          "id": "V16",
+          "value": "national",
+          "description": "Operates at national level."
+        },
+        {
+          "id": "V17",
+          "value": "international",
+          "description": "Operates across multiple countries."
+        },
+        {
+          "id": "V18",
+          "value": "global",
+          "description": "Operates globally with no national or regional restriction."
+        }
+      ]
+    },
+    {
+      "name": "categoryValue",
+      "description": "Category of a tool or service entry.",
+      "appliesTo": ["tools-and-services.category"],
+      "terms": [
+        {
+          "id": "V20",
+          "value": "reference-resource",
+          "description": "A documented body of knowledge that others build on, such as a schema, vocabulary, or template set."
+        },
+        {
+          "id": "V21",
+          "value": "tooling",
+          "description": "Software tools, libraries, or applications that perform specific tasks."
+        },
+        {
+          "id": "V22",
+          "value": "infrastructure",
+          "description": "Long-running services or systems that others depend on."
+        },
+        {
+          "id": "V23",
+          "value": "guidance",
+          "description": "Procedures, training materials, and best practice guidance."
+        },
+        {
+          "id": "V24",
+          "value": "platform",
+          "description": "Integrated systems combining several tools and services."
+        },
+        {
+          "id": "V25",
+          "value": "service",
+          "description": "Ongoing operational service provided to users."
+        },
+        {
+          "id": "V26",
+          "value": "other",
+          "description": "Other categories not covered above."
+        }
+      ]
+    },
+    {
+      "name": "commonlyPresent",
+      "description": "How frequently a resource type is present in typical heritage science work.",
+      "appliesTo": ["resources.commonlyPresent"],
+      "terms": [
+        {
+          "id": "V30",
+          "value": "almost-always",
+          "description": "Present in nearly all heritage science work."
+        },
+        {
+          "id": "V31",
+          "value": "usually",
+          "description": "Present in most heritage science work."
+        },
+        {
+          "id": "V32",
+          "value": "variable",
+          "description": "Present in some heritage science work, depending on project type and resources."
+        },
+        {
+          "id": "V33",
+          "value": "occasional",
+          "description": "Present in a minority of heritage science work."
+        },
+        {
+          "id": "V34",
+          "value": "rare",
+          "description": "Present only in specific kinds of heritage science work."
+        }
+      ]
+    },
+    {
+      "name": "fairPrinciple",
+      "description": "The four FAIR principles.",
+      "appliesTo": ["treatment-levels.fairContribution"],
+      "terms": [
+        {
+          "id": "V40",
+          "value": "findable",
+          "description": "Data should be findable through clear identifiers and indexed metadata.",
+          "related": [
+            {
+              "type": "documentation",
+              "identifier": "https://www.go-fair.org/fair-principles/",
+              "title": "GO FAIR principles"
+            }
+          ]
+        },
+        {
+          "id": "V41",
+          "value": "accessible",
+          "description": "Data should be retrievable through standardised protocols, with clear access conditions."
+        },
+        {
+          "id": "V42",
+          "value": "interoperable",
+          "description": "Data should use shared standards and vocabularies so it can be combined with other data."
+        },
+        {
+          "id": "V43",
+          "value": "reusable",
+          "description": "Data should be well described and carry clear re-use licences so it can be used in new contexts."
+        }
+      ]
+    },
+    {
+      "name": "transitionKind",
+      "description": "The kind of transition between levels or across the framework.",
+      "appliesTo": ["transitions.kind"],
+      "terms": [
+        {
+          "id": "V50",
+          "value": "level-to-level",
+          "description": "A transition from one specific treatment level to another."
+        },
+        {
+          "id": "V51",
+          "value": "downward",
+          "description": "Movement from a higher level to a lower level, typically for exchange with partners working at the lower level."
+        },
+        {
+          "id": "V52",
+          "value": "cross-cutting",
+          "description": "A transition that applies across multiple levels rather than between two specific levels."
+        }
+      ]
+    }
+  ]
+}

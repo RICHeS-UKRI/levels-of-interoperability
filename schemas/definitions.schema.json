@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/definitions.schema.json",
+  "title": "Shared definitions for the Levels of Interoperability framework",
+  "description": "Reusable type definitions and controlled vocabularies referenced by the four data schemas.",
+  "$defs": {
+    "resourceId": {
+      "type": "string",
+      "pattern": "^R[0-9]{2,3}$",
+      "description": "Identifier for a resource type, of the form R followed by two or three digits."
+    },
+    "levelId": {
+      "type": "string",
+      "pattern": "^T[0-9]{2,3}[a-z]?\\+?$",
+      "description": "Identifier for a treatment level, of the form T followed by two or three digits, optionally followed by a sublevel letter and an optional plus marker."
+    },
+    "serviceId": {
+      "type": "string",
+      "pattern": "^S[0-9]{2,3}$",
+      "description": "Identifier for a tool or service, of the form S followed by two or three digits."
+    },
+    "transitionId": {
+      "type": "string",
+      "pattern": "^X[0-9]{2,3}$",
+      "description": "Identifier for a transition, of the form X followed by two or three digits."
+    },
+    "vocabularyTermId": {
+      "type": "string",
+      "pattern": "^V[0-9]{2,3}$",
+      "description": "Identifier for a vocabulary term, of the form V followed by two or three digits."
+    },
+    "anyId": {
+      "oneOf": [
+        { "$ref": "#/$defs/resourceId" },
+        { "$ref": "#/$defs/levelId" },
+        { "$ref": "#/$defs/serviceId" },
+        { "$ref": "#/$defs/transitionId" },
+        { "$ref": "#/$defs/vocabularyTermId" }
+      ],
+      "description": "Any framework identifier."
+    },
+    "orderValue": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Presentation order, independent of identifier. Gaps recommended to allow insertion without renumbering."
+    },
+    "relatedResource": {
+      "type": "object",
+      "description": "A reference to an external resource related to a framework entry.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "example",
+            "implementation",
+            "documentation",
+            "supersedes",
+            "supersededBy",
+            "cites",
+            "isCitedBy",
+            "isPartOf",
+            "hasPart",
+            "homepage",
+            "repository",
+            "specification",
+            "other"
+          ],
+          "description": "The kind of relationship between the entry and the external resource."
+        },
+        "identifier": {
+          "type": "string",
+          "description": "The identifier of the external resource. May be a DOI, URL, ORCID, ROR, or other PID."
+        },
+        "title": {
+          "type": "string",
+          "description": "Human-readable title or label for the external resource."
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional context about why this resource is related."
+        }
+      },
+      "required": ["type", "identifier"],
+      "additionalProperties": false
+    },
+    "currentStatus": {
+      "type": "string",
+      "enum": [
+        "mature",
+        "established",
+        "emerging",
+        "prototype",
+        "conceptual",
+        "not-yet-developed"
+      ],
+      "description": "The development status of a tool, service, or reference resource."
+    },
+    "scopeValue": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "project",
+        "team",
+        "institutional",
+        "cross-institutional",
+        "sectoral",
+        "national",
+        "international",
+        "global"
+      ],
+      "description": "A scope at which a level or attribute applies."
+    },
+    "accessibilityValue": {
+      "type": "string",
+      "enum": [
+        "personal-only",
+        "restricted",
+        "institutional",
+        "controlled-access",
+        "open-with-conditions",
+        "openly-accessible"
+      ],
+      "description": "An accessibility state for a resource."
+    },
+    "licensingValue": {
+      "type": "string",
+      "enum": [
+        "no-licence-stated",
+        "bespoke-terms",
+        "machine-readable-restrictive",
+        "machine-readable-permissive",
+        "open-standard-licence",
+        "public-domain"
+      ],
+      "description": "A re-use licensing state for a resource."
+    },
+    "populationCompleteness": {
+      "type": "string",
+      "enum": [
+        "not-applicable",
+        "required-only",
+        "required-and-recommended",
+        "required-recommended-and-some-optional",
+        "comprehensive"
+      ],
+      "description": "How fully populated a schema-bearing resource is, indicating progress within a level."
+    },
+    "categoryValue": {
+      "type": "string",
+      "enum": [
+        "reference-resource",
+        "tooling",
+        "infrastructure",
+        "guidance",
+        "platform",
+        "service",
+        "other"
+      ],
+      "description": "The category of a tool or service entry."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/treatment-levels.schema.json",
+  "title": "Treatment Levels",
+  "description": "The treatment ladder, describing how resources may be organised and described, from tacit and unstructured through to integrated digital constructs.",
+  "type": "object",
+  "required": ["framework", "version", "entries"],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "const": "levels-of-interoperability",
+      "description": "Constant identifier for the framework these data belong to."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the dataset, following semantic versioning."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the last substantive update to the dataset."
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/treatmentLevel" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "treatmentLevel": {
+      "type": "object",
+      "required": ["id", "order", "name", "description"],
+      "properties": {
+        "id": {
+          "$ref": "definitions.schema.json#/$defs/levelId"
+        },
+        "order": {
+          "$ref": "definitions.schema.json#/$defs/orderValue"
+        },
+        "name": {
+          "type": "string",
+          "description": "Short name of the treatment level, suitable for headings and labels."
+        },
+        "description": {
+          "type": "string",
+          "description": "Concise definition of what this level means."
+        },
+        "keyCharacteristics": {
+          "type": "string",
+          "description": "Observable properties that distinguish this level."
+        },
+        "scopeApplies": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/scopeValue" },
+          "description": "Scopes at which this level meaningfully applies."
+        },
+        "accessibilityConsideration": {
+          "type": "string",
+          "description": "How accessibility typically interacts with this level. Free text because the relationship is nuanced."
+        },
+        "licensingConsideration": {
+          "type": "string",
+          "description": "How re-use licensing typically interacts with this level. Free text. Licensing is largely a cross-cutting attribute but its prominence and expectations shift across levels."
+        },
+        "populationCompletenessApplies": {
+          "type": "boolean",
+          "description": "Whether the population completeness attribute is meaningful at this level."
+        },
+        "populationCompletenessNotes": {
+          "type": "string",
+          "description": "Optional clarification on how population completeness behaves at this level."
+        },
+        "typicallyRequires": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/levelId" },
+          "description": "Levels that are typically prerequisite to reaching this one. Empty for baseline. The relationship is typical rather than strict, reflecting the partial-order nature of the framework."
+        },
+        "typicallyRequiresNotes": {
+          "type": "string",
+          "description": "Optional clarification on the prerequisite relationship, including where order is flexible or where jumps are possible."
+        },
+        "branchOrJumpNotes": {
+          "type": "string",
+          "description": "Notes on branches from this level, jumps that are possible, or non-cumulative behaviour."
+        },
+        "whatItEnables": {
+          "type": "string",
+          "description": "Capabilities or outcomes that become possible at this level."
+        },
+        "fairContribution": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["findable", "accessible", "interoperable", "reusable"]
+          },
+          "description": "Which FAIR principles this level most directly advances."
+        },
+        "related": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/relatedResource" },
+          "description": "External resources relevant to this level."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Any further notes that do not fit other fields."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

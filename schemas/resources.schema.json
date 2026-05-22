@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/resources.schema.json",
+  "title": "Resources Inventory",
+  "description": "The inventory of resource types that researchers and institutions may hold, independent of how they are organised or treated.",
+  "type": "object",
+  "required": ["framework", "version", "entries"],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "const": "levels-of-interoperability"
+    },
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date"
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/resource" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "resource": {
+      "type": "object",
+      "required": ["id", "order", "name", "description"],
+      "properties": {
+        "id": {
+          "$ref": "definitions.schema.json#/$defs/resourceId"
+        },
+        "order": {
+          "$ref": "definitions.schema.json#/$defs/orderValue"
+        },
+        "name": {
+          "type": "string",
+          "description": "Short name of the resource type."
+        },
+        "description": {
+          "type": "string",
+          "description": "Concise definition of the resource type."
+        },
+        "typicalForm": {
+          "type": "string",
+          "description": "Common physical or digital forms this resource takes."
+        },
+        "commonlyPresent": {
+          "type": "string",
+          "enum": [
+            "almost-always",
+            "usually",
+            "variable",
+            "occasional",
+            "rare"
+          ],
+          "description": "How frequently this resource type is present in typical heritage science work."
+        },
+        "realisticCeiling": {
+          "type": "string",
+          "description": "The highest treatment level this resource type can realistically reach, with notes on dependencies. Free text to allow nuance."
+        },
+        "realisticCeilingLevels": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/levelId" },
+          "description": "Structured form of the realistic ceiling, listing specific levels reachable."
+        },
+        "scopeNotes": {
+          "type": "string",
+          "description": "How this resource type typically behaves with respect to scope (individual, institutional, etc)."
+        },
+        "accessibilityNotes": {
+          "type": "string",
+          "description": "How this resource type typically behaves with respect to accessibility."
+        },
+        "licensingNotes": {
+          "type": "string",
+          "description": "How this resource type typically behaves with respect to re-use licensing."
+        },
+        "related": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/relatedResource" },
+          "description": "External resources relevant to this resource type, including example datasets, related schemas, and so on."
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

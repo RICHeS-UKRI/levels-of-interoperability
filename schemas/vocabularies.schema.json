@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richesriches.example.org/ramp/schemas/vocabularies.schema.json",
+  "title": "Vocabularies",
+  "description": "Controlled vocabularies used by the framework, including the canonical definitions of terms that appear in the enumerations of the other schemas. This file is descriptive: the authoritative term sets live in the JSON Schema enumerations themselves. This file gives each term a stable identifier and a fuller description.",
+  "type": "object",
+  "required": ["framework", "version", "vocabularies"],
+  "properties": {
+    "framework": {
+      "type": "string",
+      "const": "levels-of-interoperability"
+    },
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date"
+    },
+    "vocabularies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/vocabulary" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "vocabulary": {
+      "type": "object",
+      "required": ["name", "description", "terms"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of this vocabulary, matching the corresponding enumeration in the schemas."
+        },
+        "description": {
+          "type": "string"
+        },
+        "appliesTo": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Schema fields this vocabulary applies to."
+        },
+        "terms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/term" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "required": ["id", "value", "description"],
+      "properties": {
+        "id": {
+          "$ref": "definitions.schema.json#/$defs/vocabularyTermId"
+        },
+        "value": {
+          "type": "string",
+          "description": "The string value as used in the data files."
+        },
+        "label": {
+          "type": "string",
+          "description": "Human-readable label, if different from the value."
+        },
+        "description": {
+          "type": "string"
+        },
+        "related": {
+          "type": "array",
+          "items": { "$ref": "definitions.schema.json#/$defs/relatedResource" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
