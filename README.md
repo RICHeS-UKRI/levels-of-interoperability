@@ -1,5 +1,7 @@
 # Levels of Interoperability for Heritage Science
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20366425.svg)](https://doi.org/10.5281/zenodo.20366425)
+
 A framework for describing and planning the development of data practice
 in heritage science, from tacit personal records through to integrated
 digital constructs.
