@@ -174,8 +174,7 @@ the emerging ECCCH, and national and international aggregators.
 This framework has been developed as part of work supported by UKRI
 through the Research Infrastructure for Conservation and Heritage
 Science (RICHeS) programme, including the Heritage Science Data Service
-(HSDS) and the Reynolds Digital Research Resource. The work is hosted
-at the National Gallery, London.
+(HSDS).
 
 The current articulation owes a particular debt to the response from
 E-RIHS DIGILAB to an earlier position note on CIDOC CRM templates, which
