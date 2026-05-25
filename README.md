@@ -44,31 +44,6 @@ levels at which it can realistically be treated, the transitions
 involved in reaching higher treatment levels, and the tools and
 services that support those transitions.
 
-## Repository layout
-
-```
-.
-├── README.md                       # this file
-├── data/                           # JSON source of truth
-│   ├── treatment-levels.json
-│   ├── resources.json
-│   ├── tools-and-services.json
-│   ├── transitions.json
-│   └── vocabularies.json
-├── schemas/                        # JSON Schema definitions
-│   ├── definitions.schema.json
-│   ├── treatment-levels.schema.json
-│   ├── resources.schema.json
-│   ├── tools-and-services.schema.json
-│   ├── transitions.schema.json
-│   └── vocabularies.schema.json
-├── scripts/
-│   ├── check_consistency.py        # validation
-│   └── build_combined.py           # generate xlsx
-├── build/                          # generated outputs (not versioned)
-└── docs/                           # future presentation layer
-```
-
 ## Identifier conventions
 
 Each entry across the four datasets has a stable identifier that does
@@ -177,6 +152,43 @@ and important, but they sit outside the boundary of this framework as
 documented here and require richer context to describe properly. A future
 extension of the framework may treat them more fully.
 
+## Related work
+
+The framework sits in a landscape of related projects and bodies of
+work, with relationships that vary in kind. A foundational tier of
+predecessor work, active engagements where the framework is in current
+conversation, intended connections where alignment is planned, the
+underlying infrastructure and standards the framework depends on, and
+adjacent work in nearby domains are all distinguished and listed in
+[docs/related-work.md](docs/related-work.md).
+
+In brief, the framework continues a line of work begun in IPERION HS
+on levels of interoperability, is currently shaped by ongoing
+conversations with E-RIHS DIGILAB, the RICHeS Heritage Science Data
+Service architecture work and related ECHOES work, and is designed to connect with the wider
+heritage and research data ecosystems including CIDOC CRM, Linked.art, 
+the emerging ECCCH, and national and international aggregators.
+
+## Acknowledgements
+
+This framework has been developed as part of work supported by UKRI
+through the Research Infrastructure for Conservation and Heritage
+Science (RICHeS) programme, including the Heritage Science Data Service
+(HSDS) and the Reynolds Digital Research Resource. The work is hosted
+at the National Gallery, London.
+
+The current articulation owes a particular debt to the response from
+E-RIHS DIGILAB to an earlier position note on CIDOC CRM templates, which
+prompted the development of the wider levels framework documented here.
+Earlier discussions within the HPSWG-Models group and the broader
+E-RIHS and IPERION HS communities have shaped the thinking over several
+years.
+
+Any errors or limitations in the current formulation remain the
+responsibility of the author. The framework is published as a working
+starting point in the expectation that community input will refine and
+extend it.
+
 ## Licence
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
@@ -192,17 +204,4 @@ This work is licensed under a
 
 ## Citation
 
-To be confirmed once first release is deposited via Zenodo.
-
-## Related work
-
-The framework draws on and connects to:
-
-- IPERION HS work on levels of interoperability, including
-  https://doi.org/10.5281/zenodo.7101169 and
-  https://doi.org/10.5281/zenodo.7849169
-- HPSWG-Models semantic modelling work
-- RICHeS Heritage Science Data Service architecture
-- E-RIHS DIGILAB activities on semantic artefacts and registries
-- Linked.art, CRM-SIG, and CIDOC CRM community work
-- Heritage Samples Registry
+Padfield, J. (2026). Levels of Interoperability for Heritage Science (v0.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20366424
